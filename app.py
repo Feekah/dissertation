@@ -86,7 +86,7 @@ def gen():
         except:
           pass
 
-        cv2.rectangle(image, (0, 0), (280, 73), (280, 117, 16), -1)
+        cv2.rectangle(image, (0, 0), (500, 73), (240, 117, 16), -1)
 
         # Rep data for count
         cv2.putText(image, 'COUNT', (15, 12),
@@ -96,17 +96,17 @@ def gen():
                     cv2.FONT_HERSHEY_SIMPLEX, .5, (255, 255, 255), 2, cv2.LINE_AA)
 
         # Rep data for Form
-        cv2.putText(image, 'FORM', (90, 12),
+        cv2.putText(image, 'STAGE', (90, 12),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.2, (0, 0, 0), 1, cv2.LINE_AA)
-        cv2.putText(image, str(feed),
-                    (80, 60),
+        cv2.putText(image, str(squat_stage),
+                    (85, 60),
                     cv2.FONT_HERSHEY_SIMPLEX, .5, (255, 255, 255), 2, cv2.LINE_AA)
 
         # Rep data for Stage
-        cv2.putText(image, 'STAGE', (150, 12),  # Adjusted X-coordinate
+        cv2.putText(image, 'FORM', (135, 12),  # Adjusted X-coordinate
                     cv2.FONT_HERSHEY_SIMPLEX, 0.2, (0, 0, 0), 1, cv2.LINE_AA)
-        cv2.putText(image, str(squat_stage),
-                    (150, 60),  # Adjusted X-coordinate
+        cv2.putText(image, str(feed),
+                    (130, 60),  # Adjusted X-coordinate
                     cv2.FONT_HERSHEY_SIMPLEX, .5, (255, 255, 255), 2, cv2.LINE_AA)
 
 
