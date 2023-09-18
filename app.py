@@ -86,8 +86,6 @@ def gen():
         except:
           pass
 
-      # Render curl counter
-              # Setup status box
         cv2.rectangle(image, (0, 0), (225, 73), (245, 117, 16), -1)
 
         # Rep data for count
@@ -105,11 +103,18 @@ def gen():
                     cv2.FONT_HERSHEY_SIMPLEX, .5, (255, 255, 255), 2, cv2.LINE_AA)
 
         # Rep data for Stage
-        cv2.putText(image, 'STAGE', (150, 12),
+        cv2.putText(image, 'STAGE', (150, 12),  # Adjusted X-coordinate
                     cv2.FONT_HERSHEY_SIMPLEX, 0.2, (0, 0, 0), 1, cv2.LINE_AA)
         cv2.putText(image, str(squat_stage),
-                    (150, 60),
+                    (140, 60),  # Adjusted X-coordinate
                     cv2.FONT_HERSHEY_SIMPLEX, .5, (255, 255, 255), 2, cv2.LINE_AA)
+
+
+
+
+
+
+
 
         # Render detections
         mp_drawing.draw_landmarks(image, results.pose_landmarks, mp_pose.POSE_CONNECTIONS,
