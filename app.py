@@ -17,13 +17,13 @@ app = Flask(__name__)
 mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
 pose = mp_pose.Pose(min_detection_confidence=0.7,min_tracking_confidence=0.5)
-camera = cv2.VideoCapture(0)
+
 
 
 csv_doc = "your_dataset.csv"
 
 
-       
+camera = cv2.VideoCapture(0)      
 def gen():
     squat_counter = 0
     squat_stage = 'start'
@@ -33,6 +33,7 @@ def gen():
     dataHasbeenProcessedOnce = False
    
     """Video streaming generator function."""
+    
     while True:
         ret, frame = camera.read()
 
@@ -125,6 +126,7 @@ def gen():
            
 
 @app.route('/video_feed', methods=['GET', 'POST'])
+
 def video_feed():
     return Response(gen(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
